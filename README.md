@@ -113,6 +113,7 @@ Default parameters: **K=10, L=1024, p=0.7, q=0.05**, giving channel capacity **I
 
 This channel is subsumed (via transmission over only half of the RM codebook) by the classical channel induced by the quantum coherent state modulation and Green-Machine-photon-detection circuit analyzed by Cox et al. in PhysRevApplied.19.064015, shown below
 ![BPSK coherent state transceiver modulated by an RM(1,K) code and received by a GreenMachine-Photodetection measurement](RMGMPDtransceiverdiagram.png)
+
 ---
 
 ## Theory: K-SBP and Multi-Level Polar Coding
