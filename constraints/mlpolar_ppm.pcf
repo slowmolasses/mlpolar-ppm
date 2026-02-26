@@ -1,0 +1,47 @@
+# =============================================================================
+# mlpolar_ppm.pcf - Pin Constraints for iCEBreaker Board (iCE40UP5K)
+# Target: iCEBreaker v1.0c (iCE40UP5K-SG48 package)
+# =============================================================================
+# Board reference: https://github.com/icebreaker-fpga/icebreaker
+
+# ── Clock ─────────────────────────────────────────────────────────────────────
+set_io CLK      35       # 12 MHz XTAL on iCEBreaker
+
+# ── Reset (active-low pushbutton) ─────────────────────────────────────────────
+set_io BTN_N    10       # User button
+
+# ── PMOD 1A (encoder SPI input) ───────────────────────────────────────────────
+set_io ENC_DATA  4       # PMOD 1A pin 1
+set_io ENC_CLK   2       # PMOD 1A pin 2
+set_io ENC_CS_N  47      # PMOD 1A pin 3
+
+# ── PMOD 1B (observation input) ───────────────────────────────────────────────
+set_io OBS_DATA  43      # PMOD 1B pin 1
+set_io OBS_CLK   38      # PMOD 1B pin 2
+
+# ── PMOD 2 (decoded output) ───────────────────────────────────────────────────
+set_io DEC_DATA  28      # PMOD 2 pin 1
+set_io DEC_CLK   27      # PMOD 2 pin 2
+set_io DEC_DONE  26      # PMOD 2 pin 3
+
+# ── PPM slot output (10 bits) → connects to modulator board ───────────────────
+# Using PMOD 1A remaining pins + PMOD 1B
+set_io PPM_SLOT[0]   3   # PMOD 1A pin 4  (MSB = level 0 bit)
+set_io PPM_SLOT[1]  48   # PMOD 1A pin 7
+set_io PPM_SLOT[2]  45   # PMOD 1A pin 8
+set_io PPM_SLOT[3]  46   # PMOD 1A pin 9
+set_io PPM_SLOT[4]  44   # PMOD 1A pin 10
+set_io PPM_SLOT[5]  42   # PMOD 1B pin 4
+set_io PPM_SLOT[6]  36   # PMOD 1B pin 7
+set_io PPM_SLOT[7]  32   # PMOD 1B pin 8
+set_io PPM_SLOT[8]  31   # PMOD 1B pin 9
+set_io PPM_SLOT[9]  37   # PMOD 1B pin 10  (LSB = level 9 bit)
+
+set_io PPM_VALID     34  # PMOD 1A pin 3 (shared with ENC_CS_N alt)
+
+# ── Status LEDs ───────────────────────────────────────────────────────────────
+set_io LED_ENC  11       # Green LED (encoder active)
+set_io LED_DEC  37       # Red LED (decoder done)
+
+# Note: iCEBreaker has RGB LED on pins 39,40,41 (SB_RGBA_DRV)
+# User LEDs on PMOD or dedicated pins above
