@@ -405,9 +405,7 @@ Target: iCE40UP5K-SG48 (5280 LUTs, 30 EBR BRAMs, 8 SB_MAC16 DSP blocks).
 
 ---
 
-## Regenerating Frozen Sets
-
-**No, you do not need to manually edit `rtl/pkg_mlpolar.sv`** for the default parameters — the file already contains the correct Bhattacharyya-evolution frozen masks for K=10, p=0.7, q=0.05, N=256.
+## Flexibility of FPGA compilation for different Channel Parameters
 
 If you change any of K, p, q, or N:
 
